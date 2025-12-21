@@ -1,0 +1,49 @@
+setHeader() does not accept status code
+
+It only accepts (headerName, headerValue)
+
+Option 1: =>>> Using writeHead
+
+const http = require("http");
+
+const PORT = 3000;
+
+const server = http.createServer((req, res) => {
+  console.log(req.url);
+  console.log(req.method);
+
+  res.writeHead(200, { "Content-Type": "text/html" });
+  res.end("<h1>Hello from Node.js server!</h1>");
+});
+
+server.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
+
+Option 2: Using statusCode + setHeader
+
+const http = require("http");
+
+const PORT = 3000;
+
+const server = http.createServer((req, res) => {
+  console.log(req.url);
+  console.log(req.method);
+
+  res.statusCode = 200;
+  res.setHeader("Content-Type", "text/html");
+  res.end("<h1>Hello from Node.js server!</h1>");
+});
+
+server.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
+
+=>>> FS: 
+const path = require("path");
+
+console.log(__dirname);   // current folder path
+console.log(__filename);  // current file path
+
+const pathAdd = path.join("sample.txt", "uft8", __dirname);
+console.log(pathAdd);
