@@ -1,0 +1,14 @@
+{
+  "name": "node_js_2025",
+  "version": "1.0.0",
+  "description": "node js learning core concepts",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Mahendran",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
