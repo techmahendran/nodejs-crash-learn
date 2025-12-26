@@ -41,6 +41,17 @@ server.listen(PORT, () => {
 
 =>>> FS: 
 const path = require("path");
+const fs = require("fs");
+
+const filePath = path.join(__dirname, "sample.txt");
+
+fs.readFile(filePath, "utf8", (err, data) => {
+  if (err) {
+    console.error(err.message);
+    return;
+  }
+  console.log(data);
+});
 
 console.log(__dirname);   // current folder path
 console.log(__filename);  // current file path

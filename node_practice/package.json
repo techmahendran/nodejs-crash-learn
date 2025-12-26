@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "node js learning core concepts",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon --env-file=.env server2.js"
   },
   "author": "Mahendran",
   "license": "ISC",
